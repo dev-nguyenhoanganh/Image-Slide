@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <welcome-file-list>
+    <welcome-file>listImage.do</welcome-file>
+  </welcome-file-list>
+  
+  <display-name>Image Slider</display-name>
+  
+  <!-- ............... Mapping controller ............... -->
+  
+  <servlet>
+    <servlet-name>ListImageController</servlet-name>
+    <servlet-class>image.controllers.ListImageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListImageController</servlet-name>
+    <url-pattern>/listImage.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SystemErrorController</servlet-name>
+    <servlet-class>image.controllers.SystemErrorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SystemErrorController</servlet-name>
+    <url-pattern>/systemError.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SuccessController</servlet-name>
+    <servlet-class>image.controllers.SuccessController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SuccessController</servlet-name>
+    <url-pattern>/success.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ReloadImageController</servlet-name>
+    <servlet-class>image.controllers.ReloadImageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReloadImageController</servlet-name>
+    <url-pattern>/reloadImage.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- ............... Add User ................ -->
+  
+  <servlet>
+    <servlet-name>AddUserInputController</servlet-name>
+    <servlet-class>image.controllers.AddUserInputController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserInputController</servlet-name>
+    <url-pattern>/addUserInput.do</url-pattern>
+    <url-pattern>/addUserValidate.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>AddUserConfirmController</servlet-name>
+    <servlet-class>image.controllers.AddUserConfirmController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserConfirmController</servlet-name>
+    <url-pattern>/addUserConfirm.do</url-pattern>
+    <url-pattern>/addUserOK.do</url-pattern>
+  </servlet-mapping>
+  
+    <!-- ............... Edit Image ............... -->
+  
+  <servlet>
+    <servlet-name>EditImageInputController</servlet-name>
+    <servlet-class>image.controllers.EditImageInputController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditImageInputController</servlet-name>
+    <url-pattern>/editImage.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>EditUserConfirmController</servlet-name>
+    <servlet-class>image.controllers.EditUserConfirmController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUserConfirmController</servlet-name>
+    <url-pattern>/editUserConfirm.do</url-pattern>
+    <url-pattern>/editUserOK.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- ............... Delete Image ............... -->
+  
+  <servlet>
+    <servlet-name>DeleteImageController</servlet-name>
+    <servlet-class>image.controllers.DeleteImageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteImageController</servlet-name>
+    <url-pattern>/image.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

@@ -1,0 +1,262 @@
+
+nav {
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    margin-left: calc(10%/6);
+    font-size: 1.5em;
+    padding: 0.5em 0;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+/* Image Table */
+#imageTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  border: solid 2px black;
+  transform: translateX(12.5%);
+  table-layout: fixed;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	transition: 0.6s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: blue;
+}
+
+#imageTable td, #imageTable th {
+  border: 1px solid #f2f2f2;
+  padding: 8px;
+}
+
+#imageTable tr:hover {
+  background-color: #ddd;
+}
+
+#imageTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.slideshow-container img {
+  height: 700px;
+  width: fit-content;
+  object-fit: contain;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {font-family: Verdana, sans-serif; margin:0}
+
+.mySlides {display: block}
+
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 80%;
+  position: relative;
+  margin: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+  .slideshow-container {height: 300px}
+  
+  
+}
+
+/* Paging */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+.error {
+  width: 100%;
+}
+
+.error img {
+  margin: auto;
+  display: block;
+}
+
+.btn {
+  background-color: white; /* Green */
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+.slideshow-container .buttonArea {
+  width: 100%;
+  display: flex;
+  position: absolute;
+}
+
+.buttonArea .btn {
+  margin: 15px 15px auto auto;
+}
+
+.confirm {
+    display: none;
+}
+.confirm > div:first-of-type {
+    position  : fixed;
+    width     : 100%;
+    height    : 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top       : 0px;
+    left      : 0px;
+}
+.confirm > div:last-of-type {
+    padding   : 20px;
+    background: white;
+    position  : absolute;
+    width     : auto;
+    height    : auto;
+    top       : 50%;
+    left      : 50%;
+    transform : translate(-50%, -50%);
+    border    : 1px solid #333;
+    border-radius: 5px;
+}
+.confirm > div:last-of-type div:first-of-type {
+    min-width     : 250px;
+    min-height    : 50px;
+    vertical-align: middle;
+    padding       : 10px;
+    text-align    : center;
+}
+.confirm > div:last-of-type div:last-of-type {
+    text-align: center;
+}
+#confirmCancel {
+	margin-left: 10px;
+}
+
+#imageName, #alternateText {
+	font-size: 16px;
+	padding: 10px;
+	margin: 5px;
+}
+#inputField {
+	margin-bottom: 10px;
+}
+
+
