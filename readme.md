@@ -2,11 +2,122 @@
 
 ## Mục lục
 
-> - [1, Cài Tomcat Server](#1-cài-tomcat-server)
-> - [2, Cài JDK cho ứng dụng web](#2-cài-jdk-cho-ứng-dụng-web)
+> [1, Cài Tomcat Server](#1-cài-tomcat-server)<br>
+> [2, Cài JDK cho ứng dụng web](#2-cài-jdk-cho-ứng-dụng-web)<br>
+> [3, Cài MySQL Server](#3-cài-mysql-server)
 
+## 1, Cài JDK cho ứng dụng web
 
-### **1, Cài Tomcat Server**
+B1: Kiểm tra xem JDK đã được cài đặt trên máy chưa
+
+```terminal
+sudo apt update
+java -version
+```
+Nếu java chưa được cài đặt, thông báo sau sẽ được hiển thị ra terminal
+```
+Command 'java' not found, but can be installed with:
+
+apt install default-jre
+apt install openjdk-11-jre-headless
+apt install openjdk-8-jre-headless
+```
+
+B2: Cài bản JRE và JDK mặc định để chạy code `java`:
+
+```terminal
+$ sudo apt install default-jre
+$ sudo apt install default-jdk
+```
+
+Kiểm tra lại xem file đã được cài đặt chưa bằng lệnh
+
+```terminal
+$ javac -version
+```
+
+## 2, Cài MySQL Server
+
+Tham khảo tại trang: [https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04](https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04)
+
+**B1: Cài MySQL bằng lệnh**
+
+```terminal
+$ sudo apt-get install mysql-server
+```
+**B2: Cài đặt thông tin về bảo mật cho MySQL** <br>
+Phần này cần đọc kỹ các thông số cài đặt, để hạn chế những bug không lường trước được.
+```terminal
+$ sudo mysql_secure_installation
+```
+Cài đặt mật khẩu cho tài khoản root, đây là tài khoản có quyền cao nhất để truy cập vào mysql server, do đó cần tạo một tài khoản có độ bảo mật tốt.
+
+![Cài đặt mật khẩu cho tài khoản root](images/set-root-password.png)
+
+Cài đặt các thông số khác
+
+![Cài đặt các thông số khác](images/mysql-security-settings.png)
+
+**B3: Các câu lệnh start, stop, check status của MySQL**
+
+Kiểm tra trạng thái 
+```terminal
+$ sudo service mysql status
+```
+
+Chạy mysql service
+```terminal
+$ sudo service mysql start
+```
+
+Dừng mysql service
+```terminal
+$ sudo service mysql stop
+```
+
+**B4: Truy cập MySQL server bằng tài khoản root**
+
+```terminal
+$ sudo mysql -u root -p
+```
+
+Tới đây, nhập mật khẩu đã cài đặt cho tài khoản `root` ở bước 2
+
+![Truy cập vào mysql bằng tài khoản root](images/access-mysql-shell.png)
+
+Khi đã truy cập được tài khoản root, tiến hành tạo database cho ứng dụng web ***(Chú ý thực hiện tuần tự các bước)***
+
+```SQL
+# Tạo database `image_slider`
+CREATE DATABASE `image_slider` 
+CHARACTER SET utf8;
+
+# Hiển thị danh sách các database sẵn có
+SHOW DATABASES;
+
+# Trỏ tới database để sử dụng
+USE `image_slider`;
+
+# Tạo mới bảng `tbl_image`
+CREATE TABLE `tbl_image` (
+	`image_id` INT NOT NULL AUTO_INCREMENT,
+    `image_name` VARCHAR(255) NOT NULL,
+    `alternate_text` VARCHAR(255),
+    PRIMARY KEY (`image_id`)
+);
+```
+
+Tạo tài khoản để cấp quyền cho ứng dụng web:
+
+```SQL
+# Tạo user mới để test
+CREATE USER 'tester'@'localhost' IDENTIFIED BY '0000';
+
+# Cấp quyền cho tester này
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `image_slider`.tbl_image TO 'tester'@'localhost';
+```
+
+## 3, Cài Tomcat Server
 
 B1: Truy cập vào trang chủ của tomcat [https://tomcat.apache.org/download-80.cgi](https://tomcat.apache.org/download-80.cgi) và tải phần mềm về:
 
@@ -19,29 +130,13 @@ B2: Sau khi tải về thành công, giải nén file đó sẽ thấy cấu tr�
 
 ![Giải nén Apache Tomcat](images/Unzip%20Apache%20Tomcat.png)
 
-B3: Ứng dụng web được nén vào file `Image Slide.war`, để deploy ứng dụng lên server cần copy file này vào thư mục `apache-tomcat-8.5.65\webapps` như sau:
+B3: Ứng dụng web được nén vào file `Image Slide.war`, để deploy ứng dụng lên server cần copy file này vào thư mục **`apache-tomcat-8.5.65\webapps`** như sau:
 
 ![Deploy Web Application](images/Deploy%20Web%20Application.png)
 
-B4: Mở terminal trỏ tới thư mục `apache-tomcat-8.5.65\bin`, và chạy server:
+B4: Mở terminal trỏ tới thư mục **`apache-tomcat-8.5.65\bin`**, và chạy server:
 - `./startup.sh` với Linux
 - `startup` với windown
 
 ![Start Tomcat Server](images/Start%20Tomcat%20Server.png)
 
-## 2, Cài JDK cho ứng dụng web
-
-B1: Kiểm tra xem JDK đã được cài đặt trên máy chưa
-
-```Shell input
-
-$ sudo apt update
-$ java -version
-```
-```Shell ouput
-Command 'java' not found, but can be installed with:
-
-apt install default-jre
-apt install openjdk-11-jre-headless
-apt install openjdk-8-jre-headless
-```
