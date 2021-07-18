@@ -2,10 +2,10 @@
 
 ## Mục lục
 
-> [1, Cài JDK cho ứng dụng web](#1-cài-jdk-cho-ứng-dụng-web)<br>
-> [2, Cài MySQL Server](#2-cài-mysql-server)<br>
-> [3, Cài Tomcat Server](#3-cài-tomcat-server)<br>
-> [4, Hướng dẫn cấu hình ứng dụng](#4-hướng-dẫn-cấu-hình-ứng-dụng)
+> [1, Cài JDK cho ứng dụng web](#1-cài-jdk-cho-ứng-dụng-web--về-đầu-trang)<br>
+> [2, Cài MySQL Server](#2-cài-mysql-server--về-đầu-trang)<br>
+> [3, Cài Tomcat Server](#3-cài-tomcat-server--về-đầu-trang)<br>
+> [4, Hướng dẫn cấu hình ứng dụng](#4-hướng-dẫn-cấu-hình-ứng-dụng--về-đầu-trang)
 
 ## 1, Cài JDK cho ứng dụng web | [Về đầu trang](#)
 
