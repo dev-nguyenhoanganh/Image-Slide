@@ -206,9 +206,18 @@ File cấu hình các thông tin mở kết nối tới database
 File lưu thông tin của từng bức ảnh, có định dạng file như sau:
 ![File lưu thông tin các bức ảnh](images/list_image-txt.png)
 
+### 4.4, File lưu trữ ảnh
+
+File được nằm ở thư mục
+```
+apache-tomcat-8.5.65\webapps\Image Slide\views\images\TestImage
+```
+Ảnh được hiển thị trên web, chỉ có thể lưu trong thư mục này
+![Thư mục chứa ảnh của ứng dụng](images/image-folder.png)
 
 > # Chú ý
-> Khi thay đổi nội dung file thì cần vào server và reload lại ứng dụng web
+> - Khi thay đổi nội dung file thì cần vào server và reload lại ứng dụng web<br>
+> - Tất cả các ảnh dùng để hiển thị trong slide, cần lưu trữ tại thư mục `TestImage` 
 >
 > ![Reload lại ứng dụng web](images/tomcat-reload-application.png)
 
