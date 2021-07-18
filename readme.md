@@ -5,9 +5,9 @@
 > [1, Cài JDK cho ứng dụng web](#1-cài-jdk-cho-ứng-dụng-web)<br>
 > [2, Cài MySQL Server](#2-cài-mysql-server)<br>
 > [3, Cài Tomcat Server](#3-cài-tomcat-server)<br>
-> [4, Hướng dẫn cấu hình ứng dụng](4-hướng-dẫn-cấu-hình-ứng-dụng)
+> [4, Hướng dẫn cấu hình ứng dụng](#4-hướng-dẫn-cấu-hình-ứng-dụng)
 
-## 1, Cài JDK cho ứng dụng web
+## 1, Cài JDK cho ứng dụng web | [Về đầu trang](#)
 
 B1: Kiểm tra xem JDK đã được cài đặt trên máy chưa
 
@@ -37,7 +37,7 @@ Kiểm tra lại xem file đã được cài đặt chưa bằng lệnh
 $ javac -version
 ```
 
-## 2, Cài MySQL Server
+## 2, Cài MySQL Server | [Về đầu trang](#)
 
 Tham khảo tại trang: [https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04](https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04)
 
@@ -121,7 +121,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `image_slider`.tbl_image TO 'test
 FLUSH PRIVILEGES;
 ```
 
-## 3, Cài Tomcat Server
+## 3, Cài Tomcat Server | [Về đầu trang](#)
 
 B1: Truy cập vào trang chủ của tomcat [https://tomcat.apache.org/download-80.cgi](https://tomcat.apache.org/download-80.cgi) và tải phần mềm về:
 
@@ -177,7 +177,7 @@ Sau khi đăng nhập thành công sẽ hiển thị giao diện
 
 
 ---
-## 4, Hướng dẫn cấu hình ứng dụng
+## 4, Hướng dẫn cấu hình ứng dụng | [Về đầu trang](#)
 
 Các file cấu hình của ứng dụng được lưu tại server, nơi ứng dụng được deploy: 
 
@@ -186,9 +186,9 @@ apache-tomcat-8.5.65\webapps\Image Slide\WEB-INF\classes\image\properties
 ```
 
 **Gồm có các file**
-- [config.properties: Lưu trữ các thông tin cấu hình của hệ thống](#4.1-config.properties)
-- [database.properties: Lưu trữ các thông tin để kết nối tới 1 database](#4.2-database.properties)
-- [list_image.txt: File lưu các thông tin của ảnh](#4.3-list_image.txt)
+- [config.properties: Lưu trữ các thông tin cấu hình của hệ thống](#41-configproperties)
+- [database.properties: Lưu trữ các thông tin để kết nối tới 1 database](#42-databaseproperties)
+- [list_image.txt: File lưu các thông tin của ảnh](#43-list_imagetxt)
 
 ### 4.1, config.properties
 
