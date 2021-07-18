@@ -7,7 +7,7 @@
 > [3, Cài Tomcat Server](#3-cài-tomcat-server--về-đầu-trang)<br>
 > [4, Hướng dẫn cấu hình ứng dụng](#4-hướng-dẫn-cấu-hình-ứng-dụng--về-đầu-trang)
 
-## 1, Cài JDK cho ứng dụng web | [Về đầu trang](#)
+## 1, Cài JDK cho ứng dụng web | [Về đầu trang](#mục-lục)
 
 B1: Kiểm tra xem JDK đã được cài đặt trên máy chưa
 
@@ -37,7 +37,7 @@ Kiểm tra lại xem file đã được cài đặt chưa bằng lệnh
 $ javac -version
 ```
 
-## 2, Cài MySQL Server | [Về đầu trang](#)
+## 2, Cài MySQL Server | [Về đầu trang](#mục-lục)
 
 Tham khảo tại trang: [https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04](https://phoenixnap.com/kb/how-to-install-mysql-on-ubuntu-18-04)
 
@@ -121,7 +121,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON `image_slider`.tbl_image TO 'test
 FLUSH PRIVILEGES;
 ```
 
-## 3, Cài Tomcat Server | [Về đầu trang](#)
+## 3, Cài Tomcat Server | [Về đầu trang](#mục-lục)
 
 B1: Truy cập vào trang chủ của tomcat [https://tomcat.apache.org/download-80.cgi](https://tomcat.apache.org/download-80.cgi) và tải phần mềm về:
 
@@ -177,7 +177,7 @@ Sau khi đăng nhập thành công sẽ hiển thị giao diện
 
 
 ---
-## 4, Hướng dẫn cấu hình ứng dụng | [Về đầu trang](#)
+## 4, Hướng dẫn cấu hình ứng dụng | [Về đầu trang](#mục-lục)
 
 Các file cấu hình của ứng dụng được lưu tại server, nơi ứng dụng được deploy: 
 
