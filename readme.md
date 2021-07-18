@@ -5,7 +5,8 @@
 > [1, Cài JDK cho ứng dụng web](#1-cài-jdk-cho-ứng-dụng-web--về-đầu-trang)<br>
 > [2, Cài MySQL Server](#2-cài-mysql-server--về-đầu-trang)<br>
 > [3, Cài Tomcat Server](#3-cài-tomcat-server--về-đầu-trang)<br>
-> [4, Hướng dẫn cấu hình ứng dụng](#4-hướng-dẫn-cấu-hình-ứng-dụng--về-đầu-trang)
+> [4, Hướng dẫn cấu hình ứng dụng](#4-hướng-dẫn-cấu-hình-ứng-dụng--về-đầu-trang)<br>
+> [Chú ý](#chú-ý--về-đầu-trang)
 
 ## 1, Cài JDK cho ứng dụng web | [Về đầu trang](#mục-lục)
 
@@ -215,7 +216,7 @@ apache-tomcat-8.5.65\webapps\Image Slide\views\images\TestImage
 Ảnh được hiển thị trên web, chỉ có thể lưu trong thư mục này
 ![Thư mục chứa ảnh của ứng dụng](images/image-folder.png)
 
-> # Chú ý
+> # Chú ý | [Về đầu trang](#mục-lục)
 > - Khi thay đổi nội dung file thì cần vào server và reload lại ứng dụng web<br>
 > - Tất cả các ảnh dùng để hiển thị trong slide, cần lưu trữ tại thư mục `TestImage` 
 >
