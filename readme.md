@@ -216,6 +216,18 @@ apache-tomcat-8.5.65\webapps\Image Slide\views\images\TestImage
 Ảnh được hiển thị trên web, chỉ có thể lưu trong thư mục này
 ![Thư mục chứa ảnh của ứng dụng](images/image-folder.png)
 
+**Để đổi thành 1 thư mục khác**
+
+Truy cập vào thư mục `server.xml`
+```
+apache-tomcat-8.5.65\conf\server.xml
+```
+
+Sửa nội dung đường dẫn tại mục `docBase`
+
+![Sửa nội dung đường dẫn](images/change-directory.png)
+
+
 > # Chú ý | [Về đầu trang](#mục-lục)
 > - Khi thay đổi nội dung file thì cần vào server và reload lại ứng dụng web<br>
 > - Tất cả các ảnh dùng để hiển thị trong slide, cần lưu trữ tại thư mục `TestImage` 
