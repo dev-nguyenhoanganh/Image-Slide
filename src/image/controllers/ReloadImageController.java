@@ -31,7 +31,7 @@ public class ReloadImageController extends HttpServlet {
         try {
             
             // Đọc ảnh từ thư mục [TestImage]
-            LoadImageFromFile.loadImageFromFile();
+            LoadImageFromFile.loadImageEntityFromFile();
             
             resp.sendRedirect(req.getContextPath() + Constant.URL_LIST_IMAGE);
         } catch (Exception e) {

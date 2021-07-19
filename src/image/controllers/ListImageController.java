@@ -38,7 +38,7 @@ public class ListImageController extends HttpServlet {
 
     static {
         try {
-            LoadImageFromFile.loadImageFromFile();
+            LoadImageFromFile.loadImageEntityFromFile();
         } catch (ClassNotFoundException | SQLException | IOException e) {
             System.out.println("File list_image.txt bị lỗi");
         }
@@ -75,7 +75,7 @@ public class ListImageController extends HttpServlet {
             String sortType        = Constant.DEFAULT_SORT_TYPE;
             String sortValue       = Constant.ASC;
             String sortByImgName   = Constant.ASC;
-            String imageDir  = Constant.IMG_DIR_PATH.replace("\\","/");
+            String imageDir  = Constant.IMG_DIR_PATH;
             String sortByAlternateText  = Constant.ASC;
             List<ImageEntity> listImage = new ArrayList<ImageEntity>();
             List<Integer>    listPaging = new ArrayList<Integer>();
@@ -143,7 +143,7 @@ public class ListImageController extends HttpServlet {
                 listPaging = Common.getListPaging(totalImage, limitRecord, currentPage);
                 // Lấy giá trị cho offset
                 offset = Common.getOffset(currentPage, limitRecord);
-                // Lấy ra 5 user đầu tiên tìm được
+                // Lấy ra image tìm được
                 listImage = imgLogic.getListImage(offset, limitRecord, sortType, sortByImgName,
                         sortByAlternateText);
             } else {

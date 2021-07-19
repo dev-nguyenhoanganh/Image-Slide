@@ -27,7 +27,7 @@ import image.utils.Constant;
  */
 public class LoadImageFromFile {
     private static ArrayList<ImageEntity> listImage = new ArrayList<ImageEntity>();
-    
+    private static List<String> listImageDir; 
     
     public static boolean updateImage(ImageEntity image) throws IOException {
         boolean updateSuccess = false;
@@ -44,22 +44,17 @@ public class LoadImageFromFile {
         return updateSuccess;
     }
     
-    /**
-     * 
-     * @throws SQLException
-     * @throws ClassNotFoundException
-     */
-    public static void loadImageFromDir() throws SQLException, ClassNotFoundException {
-        try {
-            File f = new File(Constant.IMG_DIR_PATH);
-            String[] pathnames = f.list();
-            
-            TblImageDao imageDao = new TblImageDao();
-            imageDao.insertImageToDatabase(pathnames);
-        } catch (SQLException | ClassNotFoundException e) {
-            throw e;
-        }
-    }
+//    /**
+//     * 
+//     *
+//     */
+//    public static List<String> loadImageFromDir() {
+//        List<String> listImageDir = new ArrayList<String>();
+//        File f = new File(Constant.IMG_DIR_PATH);
+//        String[] pathnames = f.list();
+//        listImageDir = Arrays.asList(pathnames);
+//        return listImageDir;
+//    }
     
     /**
      * 
@@ -67,7 +62,7 @@ public class LoadImageFromFile {
      * @throws SQLException
      * @throws ClassNotFoundException
      */
-    public static void loadImageFromFile() throws IOException, SQLException, ClassNotFoundException {
+    public static void loadImageEntityFromFile() throws IOException, SQLException, ClassNotFoundException {
         try {
             listImage = convertFileToList();
             

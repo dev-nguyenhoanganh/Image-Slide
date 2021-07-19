@@ -25,7 +25,7 @@
         <c:forEach items="${listImage}" var="image">
         <div class="mySlides fade">
             <div class="numbertext">Image Name: ${image.imageName}</div>
-            <img src="views/images/TestImage/${image.imageName}"
+            <img src="/images/${image.imageName}"
                 style="width:100%">
             <div class="text">${image.alternateText == null ? '[No caption]' : fn:escapeXml(image.alternateText)}</div>
         </div>

@@ -30,7 +30,7 @@ public class Constant {
     public static final String CONFIG_PATH   = "image/properties/config.properties";
     public static final String DATABASE_PATH = "image/properties/database.properties";
     public static final String MSG_PATH      = "image/properties/message_vi.properties";
-    public static final String LIST_IMG_PATH = ConfigProperties.getValueByKey("LIST_IMG_PATH");
+    public static final String LIST_IMG_PATH = ConfigProperties.getValueByKey("LIST_IMG_PATH").replace("\\","/");
     public static final String IMG_DIR_PATH  = ConfigProperties.getValueByKey("IMG_DIR_PATH");
     
     // ----------------- Properies Parameter ----------------
@@ -66,6 +66,7 @@ public class Constant {
     public static final String IMAGE_ID       = "imageId";
     public static final String IMAGE_NAME     = "imageName";
     public static final String IMAGE_DIR      = "imageDir";
+    public static final String IMAGES         = "images";
     public static final String ALTERNATE_TEXT = "alternateText";
     // List
     public static final String LIST_ERROR   = "listError";

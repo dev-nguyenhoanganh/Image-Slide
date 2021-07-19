@@ -17,7 +17,22 @@ public class ImageEntity {
     private int imageId;
     private String imageName;
     private String alternateText;
+    private String data;
     
+    /**
+     * @return the data
+     */
+    public String getData() {
+        return data;
+    }
+
+    /**
+     * @param data the data to set
+     */
+    public void setData(String data) {
+        this.data = data;
+    }
+
     @Override
     public boolean equals(Object obj) {
         ImageEntity image = (ImageEntity) obj;
