@@ -18,13 +18,10 @@
 </head>
 
 <body>
-    <nav>Photo Slider</nav>
-    
+    <nav onclick="sendReloadRequest()">Photo Slider</nav>
     <!-- Full-width images with number and caption text -->
     <div class="slideshow-container">
-        <div class="buttonArea">
-            <button class="btn" onclick="sendReloadRequest()">Reload Image Directory</button>
-        </div>
+        
         <c:forEach items="${listImage}" var="image">
         <div class="mySlides fade">
             <div class="numbertext">Image Name: ${image.imageName}</div>
