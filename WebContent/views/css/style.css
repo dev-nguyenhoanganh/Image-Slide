@@ -49,9 +49,18 @@ nav {
 }
 
 .slideshow-container img {
-  height: 700px;
-  width: fit-content;
-  object-fit: contain;
+  max-width:100%; 
+  height:auto;
+  margin: auto auto;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  margin: auto auto;
+  top: 50%;
+  left: 50%;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(-50%);
 }
 
 * {
@@ -67,6 +76,7 @@ img {vertical-align: middle;}
 /* Slideshow container */
 .slideshow-container {
   max-width: 80%;
+  height: 600px;
   position: relative;
   margin: auto;
   background-color: rgba(0,0,0,0.5);

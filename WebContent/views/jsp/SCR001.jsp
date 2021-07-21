@@ -25,8 +25,7 @@
         <c:forEach items="${listImage}" var="image">
         <div class="mySlides fade">
             <div class="numbertext">Image Name: ${image.imageName}</div>
-            <img src="/images/${image.imageName}"
-                style="width:100%">
+            <img src="/images/${image.imageName}">
             <div class="text">${image.alternateText == null ? '[No caption]' : fn:escapeXml(image.alternateText)}</div>
         </div>
         </c:forEach>
@@ -45,7 +44,7 @@
         </tr>
         <c:forEach items="${listImage}" var="image">
           <tr>
-            <td align="center"><a href="Javascript: Confirm.dialog('${fn:escapeXml(image.imageName)}', '${fn:escapeXml(image.alternateText)}', '${image.imageId}');">${image.imageId}</a></td>
+            <td align="center"><a class="imageInfor" href="Javascript: Confirm.dialog('${fn:escapeXml(image.imageName)}', '${fn:escapeXml(image.alternateText)}', '${image.imageId}');">${image.imageId}</a></td>
             <td><a href="Javascript: Confirm.dialog('${fn:escapeXml(image.imageName)}', '${fn:escapeXml(image.alternateText)}', '${image.imageId}');">${fn:escapeXml(image.imageName)}</a></td>
             <td><a href="Javascript: Confirm.dialog('${fn:escapeXml(image.imageName)}', '${fn:escapeXml(image.alternateText)}', '${image.imageId}');">${image.alternateText == null ? '[No caption]' : fn:escapeXml(image.alternateText)}</a></td>
           </tr>
@@ -63,7 +62,7 @@
       <div class="pagination">
         <c:if test="${!listPaging.isEmpty()}">
           <c:if test="${requestScope.currentPage gt LIMIT_PAGE}">
-            <a href="${urlPaging}&currentPage=${listPaging[0] - LIMIT_PAGE}">&laquo;</a>&nbsp;
+            <a id="pagingPre" href="${urlPaging}&currentPage=${listPaging[0] - LIMIT_PAGE}">&laquo;</a>&nbsp;
           </c:if>
           <c:forEach items="${listPaging}" var="page" >
           <c:choose>
@@ -76,7 +75,7 @@
           </c:choose>
           </c:forEach>
           <c:if test="${totalPage gt (listPaging[0] + LIMIT_PAGE - 1)}">
-            <a href="${urlPaging}&currentPage=${listPaging[0] + LIMIT_PAGE}">&raquo;</a>
+            <a id="pagingNext" href="${urlPaging}&currentPage=${listPaging[0] + LIMIT_PAGE}">&raquo;</a>
           </c:if>
         </c:if>
       </div>
@@ -131,6 +130,6 @@
 			</div>
 	</div>
   </form>
+	<br/>
 </body>
-
 </html>

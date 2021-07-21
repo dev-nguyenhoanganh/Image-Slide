@@ -40,6 +40,7 @@ public class ListImageController extends HttpServlet {
         try {
             LoadImageFromFile.loadImageEntityFromFile();
         } catch (ClassNotFoundException | SQLException | IOException e) {
+        	e.printStackTrace();
             System.out.println("File list_image.txt bị lỗi");
         }
     }

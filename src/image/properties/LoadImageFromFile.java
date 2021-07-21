@@ -27,7 +27,6 @@ import image.utils.Constant;
  */
 public class LoadImageFromFile {
     private static ArrayList<ImageEntity> listImage = new ArrayList<ImageEntity>();
-    private static List<String> listImageDir; 
     
     public static boolean updateImage(ImageEntity image) throws IOException {
         boolean updateSuccess = false;
@@ -84,11 +83,13 @@ public class LoadImageFromFile {
             String data = readFile(Constant.LIST_IMG_PATH);
             String[] dataLine = data.split(Constant.LINE_DELIMITER);
             for (int i = 0; i < dataLine.length; i++) {
-                String[] imageInfor = dataLine[i].split(Constant.IMAGE_DELIMITER);
-                ImageEntity image = new ImageEntity();
-                image.setImageName(imageInfor[0].replace("\'", "\\\'"));
-                image.setAlternateText(imageInfor[1]);
-                list.add(image);
+                int index = dataLine[i].indexOf(Constant.IMAGE_DELIMITER);
+            	if (index != -1) {
+            		ImageEntity image = new ImageEntity();
+            		image.setImageName(dataLine[i].substring(0, index));
+                    image.setAlternateText(dataLine[i].substring(index + Constant.IMAGE_DELIMITER.length()));
+                    list.add(image);
+                }
             }
         } catch (IOException e) {
             throw e;

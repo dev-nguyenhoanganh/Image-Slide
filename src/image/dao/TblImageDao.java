@@ -129,8 +129,8 @@ public class TblImageDao extends BaseDao {
                 ImageEntity image = new ImageEntity();
                 // Thiết lập các thuộc tính cho ảnh
                 image.setImageId(rs.getInt(Constant.IMAGE_ID));
-                image.setImageName(rs.getString(Constant.IMAGE_NAME));
-                image.setAlternateText(rs.getString(Constant.ALTERNATE_TEXT));
+                image.setImageName(rs.getString(Constant.IMAGE_NAME).replace("\\", "\\\\").replace("'", "\\'"));
+                image.setAlternateText(rs.getString(Constant.ALTERNATE_TEXT).replace("\\", "\\\\").replace("'", "\\'"));
                 // Thêm user vào danh sách trả về
                 listImage.add(image);
             }
@@ -205,9 +205,9 @@ public class TblImageDao extends BaseDao {
                      
                 for (ImageEntity image : listImage) {
                     query.append("('")
-                         .append(image.getImageName())
+                         .append(image.getImageName().replace("\\", "\\\\").replace("'", "\\'"))
                          .append("', '")
-                         .append(image.getAlternateText())
+                         .append(image.getAlternateText().replace("\\", "\\\\").replace("'", "\\'"))
                          .append("'),\n");
                 }
                 // Thiết lập mệnh đề prepareStatement để gửi truy vấn tới DB

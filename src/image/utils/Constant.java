@@ -26,14 +26,14 @@ public class Constant {
     public static final String SUCCESS = "/views/jsp/Success.jsp";
     
 
-    // -----------------   Properies Path   -----------------
+    // -----------------   Properties Path   -----------------
     public static final String CONFIG_PATH   = "image/properties/config.properties";
     public static final String DATABASE_PATH = "image/properties/database.properties";
     public static final String MSG_PATH      = "image/properties/message_vi.properties";
     public static final String LIST_IMG_PATH = ConfigProperties.getValueByKey("LIST_IMG_PATH").replace("\\","/");
     public static final String IMG_DIR_PATH  = ConfigProperties.getValueByKey("IMG_DIR_PATH");
     
-    // ----------------- Properies Parameter ----------------
+    // ----------------- Properties Parameter ----------------
     public static final String URL_MYSQL     = "URL_MYSQL";
     public static final String HOST_NAME     = "HOST_NAME";
     public static final String PORT          = "PORT";
