@@ -129,6 +129,8 @@
 				</div>
 			</div>
 	</div>
+	<input type="hidden" name="currentPage" value="${currentPage}" />
+	<input type="hidden" name="urlPaging" value="${urlPaging}&currentPage=" />
   </form>
 	<br/>
 </body>

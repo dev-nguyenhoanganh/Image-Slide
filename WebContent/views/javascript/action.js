@@ -38,7 +38,7 @@ class CustomConfirm {
             // Hiển thị câu thông báo lên hộp thoại
             document.getElementById('confirmMessage').innerHTML = 'Update Image Infor';
             document.getElementById('imageName').value = imageName;
-            document.getElementById('imageName').focus();
+            document.getElementById('alternateText').focus();
             document.getElementById('alternateText').value = alternateText;
             // Tạo param [userId] cho form
             var imageId = document.createElement("input");
@@ -68,6 +68,14 @@ class CustomConfirm {
     }
 }
 
+function nextPaging(number) {
+    var currentPage = parseInt(document.getElementsByName('currentPage')[0].value);
+    var urlPaging = document.getElementsByName('urlPaging')[0].value;
+    if (currentPage > 0) {
+        currentPage += number;
+        document.location.href = urlPaging + currentPage;
+    }
+}
 
 document.addEventListener('keydown', (event) => {
     var name = event.key;
@@ -78,18 +86,14 @@ document.addEventListener('keydown', (event) => {
             break;
         case 'ArrowLeft':
             if (buttonDown === 'Shift') {
-                if (pagingPre) {
-                    pagingPre.click();;
-                }
+                nextPaging(-1);
             } else {
                 plusSlides(-1);
             }
             break;
         case 'ArrowRight':
             if (buttonDown === 'Shift') {
-                if (pagingNext) {
-                    pagingNext.click();
-                }
+                nextPaging(+1);
             } else {
                 plusSlides(+1);
             }

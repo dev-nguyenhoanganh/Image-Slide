@@ -50,10 +50,7 @@ nav {
 
 .slideshow-container img {
   max-width:100%; 
-  height:auto;
-  margin: auto auto;
-  max-width: 100%;
-  height: auto;
+  max-height: 600px;
   position: absolute;
   margin: auto auto;
   top: 50%;
